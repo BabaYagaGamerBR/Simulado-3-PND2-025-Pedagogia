@@ -1,0 +1,1533 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simulado PND 2025 — Pedagogia (100 questões)</title>
+  <style>
+    :root{
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --accent:#2b6cb0;
+      --muted:#6b7280;
+      --success:#2f855a;
+      --danger:#c53030;
+    }
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#111; margin:0; padding:24px;}
+    .wrap{max-width:980px;margin:0 auto;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;}
+    h1{font-size:20px;margin:0;color:var(--accent);}
+    .meta{font-size:13px;color:var(--muted);}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06);}
+    .question{font-size:17px;margin-bottom:12px;}
+    .options{display:grid;gap:10px;}
+    button.opt{display:block;text-align:left;padding:10px;border-radius:8px;border:1px solid #e6e9ee;background:#fff;cursor:pointer;font-size:15px;}
+    button.opt:hover{box-shadow:0 2px 8px rgba(15,23,42,0.04);}
+    .opt.selected{outline:3px solid rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.18);}
+    .opt.correct{background:rgba(72,187,120,0.08);border-color:rgba(72,187,120,0.3);}
+    .opt.wrong{background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.18);}
+    .controls{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:12px;}
+    .btn{padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600;}
+    .btn.primary{background:var(--accent);color:#fff;}
+    .btn.ghost{background:transparent;border:1px solid #e6e9ee;color:var(--muted);}
+    .info{font-size:14px;color:var(--muted);}
+    .explanation{margin-top:12px;padding:12px;border-left:4px solid var(--accent);background:#f0f7ff;border-radius:6px;color:#073763;}
+    .grid-qnums{display:flex;flex-wrap:wrap;gap:6px;max-height:140px;overflow:auto;padding:8px;border-radius:8px;border:1px solid #eef2f6;background:#fbfdff;}
+    .qnum{width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e6e9ee;cursor:pointer;}
+    .qnum.current{background:var(--accent);color:#fff;border-color:var(--accent);}
+    .score{font-weight:700;color:var(--accent);}
+    footer{margin-top:18px;display:flex;gap:8px;align-items:center;justify-content:space-between;}
+    @media (max-width:640px){header{flex-direction:column;align-items:flex-start} .controls{flex-direction:column-reverse;align-items:stretch} .grid-qnums{max-height:90px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Simulado Completo — PND 2025 (Pedagogia)</h1>
+        <div class="meta">100 questões comentadas — Prof. Rafael Canatto</div>
+      </div>
+      <div style="text-align:right">
+        <div class="meta">Questão <span id="qIndex">1</span> / 100</div>
+        <div class="meta">Pontuação: <span id="score">0</span></div>
+      </div>
+    </header>
+
+    <main class="card">
+      <div id="questionWrap">
+        <div class="question" id="questionText">Carregando questão...</div>
+        <div class="options" id="optionsList"></div>
+
+        <div id="explanationBox" style="display:none" class="explanation"></div>
+
+        <div class="controls">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <button class="btn ghost" id="btnPrev">Anterior</button>
+            <button class="btn primary" id="btnNext">Próxima</button>
+            <button class="btn ghost" id="btnRestart">Reiniciar</button>
+          </div>
+
+          <div style="text-align:right">
+            <button class="btn ghost" id="btnPrint">Exportar/Imprimir (PDF)</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <div style="font-size:13px;color:var(--muted);margin-bottom:6px;">Ir para questão</div>
+          <div class="grid-qnums" id="qNums"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div style="font-size:13px;color:var(--muted)">Dica: use o botão <strong>Exportar/Imprimir (PDF)</strong> para salvar em PDF.</div>
+      <div><button class="btn ghost" id="btnFinish">Concluir (ver pontuação)</button></div>
+    </footer>
+  </div>
+
+<script>
+/*
+  Array de 100 questões com: id, question, options[5], answer ('a'..'e'), explanation
+  Conteúdo transcrito dos blocos que geramos na conversa.
+*/
+const questions = [
+  // --- BLOCO 1: Questões 1–25 (Formação Geral + início específico)
+  {
+    id: 1,
+    question: "Um professor percebe que um aluno tem sofrido bullying por conta de sua orientação sexual. Ao intervir, o docente realiza uma roda de conversa sobre respeito e diversidade. Essa ação demonstra:",
+    options: [
+      "Neutralidade pedagógica",
+      "Imposição de valores morais pessoais",
+      "Compromisso ético e formação cidadã",
+      "Interferência inadequada na vida privada dos alunos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A BNCC e o Código de Ética do Magistério reforçam o papel do docente na promoção da cidadania, respeito e diversidade. A ação demonstra compromisso ético ao educar para convivência democrática e combater discriminação."
+  },
+  {
+    id: 2,
+    question: "De acordo com a LDB nº 9.394/96, a educação básica tem por finalidade:",
+    options: [
+      "Garantir acesso ao ensino superior",
+      "Assegurar formação geral para o trabalho e a cidadania",
+      "Preparar apenas para o mercado de trabalho",
+      "Transmitir conhecimentos acadêmicos específicos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O artigo 22 da LDB afirma que a educação básica visa formação comum indispensável ao exercício da cidadania e fornece meios para o progresso no trabalho e nos estudos."
+  },
+  {
+    id: 3,
+    question: "O PNE (Plano Nacional de Educação) define metas para o período de 2014–2024. Uma de suas diretrizes centrais é:",
+    options: [
+      "Privatização da educação básica",
+      "Universalização do acesso e permanência com qualidade",
+      "Redução de investimentos públicos",
+      "Substituição da BNCC",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O PNE (Lei nº 13.005/2014) orienta a política educacional brasileira focando garantia de acesso, permanência e qualidade social da educação."
+  },
+  {
+    id: 4,
+    question: "Segundo Luckesi (2011), a avaliação deve ter caráter:",
+    options: [
+      "Somente classificatório",
+      "Diagnóstico e inclusivo",
+      "Meritocrático",
+      "Excludente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Luckesi defende a avaliação diagnóstica, que visa compreender o processo de aprendizagem e reorientar a prática pedagógica ao invés de punir ou rotular."
+  },
+  {
+    id: 5,
+    question: "Entre as dez competências gerais da BNCC, destaca-se:",
+    options: [
+      "Domínio técnico de provas padronizadas",
+      "Uso acrítico das tecnologias",
+      "Exercício da empatia, diálogo e cooperação",
+      "Obediência e silêncio em sala de aula",
+      "Foco exclusivo em memorização"
+    ],
+    answer: "c",
+    explanation: "A BNCC valoriza a empatia e o respeito às diferenças, formando sujeitos colaborativos, críticos e participativos."
+  },
+  {
+    id: 6,
+    question: "O planejamento de ensino deve ser entendido como:",
+    options: [
+      "Documento burocrático obrigatório",
+      "Processo dinâmico e reflexivo de organização da prática docente",
+      "Etapa final do trabalho pedagógico",
+      "Exigência administrativa da gestão",
+      "Instrumento de controle administrativo sobre os docentes"
+    ],
+    answer: "b",
+    explanation: "O planejamento é um instrumento de reflexão e mediação, articulando teoria e prática, conforme Libâneo."
+  },
+  {
+    id: 7,
+    question: "A gestão democrática implica:",
+    options: [
+      "Decisões centralizadas no diretor",
+      "Participação coletiva e transparência nos processos educativos",
+      "Avaliação hierárquica dos professores",
+      "Exclusão dos pais nas decisões",
+      "Autonomia total sem diálogo"
+    ],
+    answer: "b",
+    explanation: "Prevista na LDB, a gestão democrática valoriza a participação da comunidade escolar e o diálogo como princípio político-pedagógico."
+  },
+  {
+    id: 8,
+    question: "De acordo com a Política Nacional de Educação Especial (2008), a inclusão pressupõe:",
+    options: [
+      "Aulas separadas para estudantes com deficiência",
+      "Adaptação curricular e acessibilidade",
+      "Redução das expectativas de aprendizagem",
+      "Avaliação diferenciada sem integração",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Inclusão significa participação plena e igualdade de oportunidades, exigindo acessibilidade física, pedagógica e comunicacional."
+  },
+  {
+    id: 9,
+    question: "Magda Soares diferencia alfabetização de letramento afirmando que:",
+    options: [
+      "São sinônimos absolutos",
+      "Alfabetizar é ensinar a ler e escrever, e letrar é usar socialmente a leitura e a escrita",
+      "Alfabetização é posterior ao letramento",
+      "Letramento é apenas domínio técnico",
+      "Nenhuma das alternativas"
+    ],
+    answer: "b",
+    explanation: "Alfabetização refere-se ao domínio do código, enquanto o letramento envolve o uso social da linguagem escrita — processos articulados."
+  },
+  {
+    id: 10,
+    question: "Uma professora propõe aos alunos que criem um jornal da turma para trabalhar escrita e oralidade. Essa prática está fundamentada na concepção:",
+    options: [
+      "Tradicional",
+      "Tecnicista",
+      "Socioconstrutivista",
+      "Behaviorista",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Essa prática envolve participação ativa, interação e produção de sentido, conforme Vygotsky e a pedagogia socioconstrutivista."
+  },
+  {
+    id: 11,
+    question: "Para Piaget, o estágio pré-operatório (2 a 7 anos) é marcado por:",
+    options: [
+      "Pensamento lógico e reversível",
+      "Egocentrismo e pensamento simbólico",
+      "Operações concretas",
+      "Raciocínio hipotético",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Nesse estágio, a criança desenvolve imaginação e linguagem, mas ainda não pensa logicamente."
+  },
+  {
+    id: 12,
+    question: "O principal objetivo da Educação Infantil segundo as DCNEI (2009) é:",
+    options: [
+      "Alfabetizar precocemente",
+      "Desenvolver integralmente a criança em seus aspectos físico, emocional, intelectual e social",
+      "Preparar para o ensino fundamental",
+      "Reforçar conteúdos escolares",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "As DCNEI orientam para o desenvolvimento integral, considerando a criança como sujeito histórico, social e cultural."
+  },
+  {
+    id: 13,
+    question: "A BNCC propõe um currículo baseado em:",
+    options: [
+      "Competências e habilidades",
+      "Conteúdos fixos e descontextualizados",
+      "Memorização de informações",
+      "Programas homogêneos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "O currículo deve desenvolver competências cognitivas, socioemocionais e práticas, em vez de apenas transmitir conteúdos."
+  },
+  {
+    id: 14,
+    question: "A autoavaliação da escola serve para:",
+    options: [
+      "Julgar o desempenho individual dos professores",
+      "Diagnosticar e planejar melhorias no projeto pedagógico",
+      "Punir alunos com baixo rendimento",
+      "Substituir a avaliação externa",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "É um processo coletivo e reflexivo, que visa aprimorar práticas e fortalecer a identidade institucional."
+  },
+  {
+    id: 15,
+    question: "Segundo Candau (2008), uma educação intercultural:",
+    options: [
+      "Ignora diferenças culturais",
+      "Valoriza a diversidade e promove diálogo entre culturas",
+      "Prioriza apenas a cultura dominante",
+      "Se opõe à educação inclusiva",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A educação intercultural é crítica, dialógica e plural, combatendo preconceitos e exclusões."
+  },
+  {
+    id: 16,
+    question: "Na BNCC, a alfabetização deve ocorrer preferencialmente:",
+    options: [
+      "Na Educação Infantil",
+      "Nos dois primeiros anos do Ensino Fundamental",
+      "No 5º ano do Fundamental",
+      "Apenas no reforço escolar",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A BNCC prevê que a alfabetização se consolide até o 2º ano, respeitando o desenvolvimento infantil."
+  },
+  {
+    id: 17,
+    question: "A avaliação formativa:",
+    options: [
+      "É contínua e acompanha o progresso do aluno",
+      "Ocorre apenas ao final do período letivo",
+      "Serve para classificar",
+      "É sinônimo de exame",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "Visa acompanhar processos de aprendizagem, favorecendo feedback e replanejamento pedagógico."
+  },
+  {
+    id: 18,
+    question: "Um projeto que une Matemática e Artes para estudar simetrias é exemplo de:",
+    options: [
+      "Disciplinaridade",
+      "Multidisciplinaridade",
+      "Interdisciplinaridade",
+      "Transdisciplinaridade",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A interdisciplinaridade integra saberes de diferentes áreas para compreender fenômenos complexos."
+  },
+  {
+    id: 19,
+    question: "Segundo a LDB, a EJA destina-se a:",
+    options: [
+      "Jovens e adultos que desejam cursar ensino superior",
+      "Jovens e adultos que não tiveram acesso ou continuidade de estudos",
+      "Alunos com deficiência",
+      "Crianças fora da faixa etária",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A EJA garante o direito à educação ao longo da vida, respeitando trajetórias diversas."
+  },
+  {
+    id: 20,
+    question: "O Projeto Político-Pedagógico (PPP) é:",
+    options: [
+      "Documento técnico da secretaria",
+      "Plano individual de aula",
+      "Instrumento de identidade e gestão democrática da escola",
+      "Exigência burocrática",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "O PPP expressa a intencionalidade educativa e os valores da escola, sendo construído coletivamente."
+  },
+  {
+    id: 21,
+    question: "Para Paulo Freire, ensinar é um ato:",
+    options: [
+      "De transferência de conhecimento",
+      "De depósito de informações",
+      "De criação e construção conjunta do saber",
+      "De repetição de conteúdos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Na pedagogia freireana, o ato de ensinar é dialógico e libertador; professor e aluno aprendem e transformam a realidade juntos."
+  },
+  {
+    id: 22,
+    question: "A prática docente reflexiva, segundo Schön (1992), implica:",
+    options: [
+      "Repetir modelos prontos",
+      "Refletir sobre a própria ação e aprender com ela",
+      "Evitar mudanças metodológicas",
+      "Submeter-se à rotina sem análise crítica",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O professor reflexivo analisa sua prática para aprimorar seu fazer pedagógico, transformando a experiência em conhecimento."
+  },
+  {
+    id: 23,
+    question: "A Zona de Desenvolvimento Proximal (ZDP), segundo Vygotsky, é:",
+    options: [
+      "O que o aluno já domina sozinho",
+      "O potencial de aprendizagem com a mediação do outro",
+      "A área de conteúdos memorizados",
+      "A distância entre o erro e o acerto",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A ZDP é o espaço entre o que a criança faz sozinha e o que consegue fazer com ajuda, mostrando o papel essencial da mediação docente."
+  },
+  {
+    id: 24,
+    question: "Segundo a Sociologia da Infância, a criança é:",
+    options: [
+      "Um adulto em miniatura",
+      "Um sujeito histórico, social e produtor de cultura",
+      "Um ser passivo no processo educativo",
+      "Uma etapa biológica sem relevância social",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A infância é construção social e cultural; a criança é protagonista de sua aprendizagem e cultura."
+  },
+  {
+    id: 25,
+    question: "De acordo com Emília Ferreiro, a criança:",
+    options: [
+      "Aprende a ler apenas pela repetição",
+      "Constrói hipóteses sobre o sistema de escrita",
+      "Memoriza o alfabeto antes de compreender o texto",
+      "Precisa dominar a caligrafia antes de ler",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A teoria psicogenética da escrita mostra que a alfabetização é um processo construtivo de hipóteses e reflexões, não mecânico."
+  },
+
+  // --- BLOCO 2: Questões 26–50 (Componente Específico)
+  {
+    id: 26,
+    question: "A mediação segundo Vygotsky é:",
+    options: [
+      "Um processo individual e espontâneo",
+      "A transmissão direta de conteúdos",
+      "A interação social que promove a construção de significados",
+      "O ensino centrado no professor",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Vygotsky destaca que o conhecimento é construído socialmente por meio da interação e da linguagem — o professor é um mediador."
+  },
+  {
+    id: 27,
+    question: "A Zona de Desenvolvimento Proximal (ZDP) refere-se:",
+    options: [
+      "Às habilidades que o aluno já domina sozinho",
+      "Às potencialidades que pode desenvolver com ajuda",
+      "Ao nível de maturidade biológica",
+      "Às dificuldades permanentes de aprendizagem",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A ZDP representa o espaço entre o que o aluno já consegue fazer sozinho e o que pode aprender com mediação."
+  },
+  {
+    id: 28,
+    question: "A teoria de Piaget enfatiza:",
+    options: [
+      "A aprendizagem como reprodução de informações",
+      "O desenvolvimento cognitivo em estágios construtivos",
+      "A ênfase na memorização de conteúdos",
+      "O ensino como treinamento",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Piaget defende que o conhecimento é construído pela ação e que o sujeito passa por estágios de desenvolvimento."
+  },
+  {
+    id: 29,
+    question: "Segundo Paulo Freire, ensinar exige:",
+    options: [
+      "Transferência mecânica de conteúdo",
+      "Neutralidade política",
+      "Diálogo e problematização da realidade",
+      "Repetição de modelos prontos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Para Freire o ensino é dialógico e libertador, em que professor e aluno aprendem através da reflexão crítica da realidade."
+  },
+  {
+    id: 30,
+    question: "O conceito de ludicidade na educação infantil:",
+    options: [
+      "É apenas recreação",
+      "Está desvinculado da aprendizagem",
+      "É fundamental para o desenvolvimento integral da criança",
+      "Deve ser restrito ao intervalo",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "O brincar é direito e meio de aprendizagem, favorecendo desenvolvimento cognitivo, social, motor e afetivo."
+  },
+  {
+    id: 31,
+    question: "As Diretrizes Curriculares Nacionais da Educação Infantil (DCNEI) destacam que:",
+    options: [
+      "O foco deve ser a alfabetização formal",
+      "A criança é sujeito histórico, social e de direitos",
+      "A avaliação deve ser classificatória",
+      "O professor atua como transmissor",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "As DCNEI afirmam que a criança é sujeito de direitos e deve ser protagonista de sua aprendizagem."
+  },
+  {
+    id: 32,
+    question: "O planejamento participativo na escola:",
+    options: [
+      "É elaborado exclusivamente pela direção",
+      "Deve envolver professores, alunos e comunidade",
+      "É uma atividade individual",
+      "É apenas um documento formal",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Reflete o princípio da gestão democrática, fortalecendo o projeto político-pedagógico (PPP)."
+  },
+  {
+    id: 33,
+    question: "A avaliação formativa tem como foco:",
+    options: [
+      "Julgar resultados finais",
+      "Acompanhar o processo e oferecer devolutivas",
+      "Aplicar provas padronizadas",
+      "Reprovar o aluno com baixo rendimento",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A avaliação formativa é contínua, processual e diagnóstica, buscando melhorar o ensino e orientar a aprendizagem."
+  },
+  {
+    id: 34,
+    question: "A BNCC é um documento que:",
+    options: [
+      "Define o currículo completo das escolas",
+      "Determina conteúdos obrigatórios e únicos",
+      "Estabelece direitos de aprendizagem e desenvolvimento",
+      "Elimina a autonomia docente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A BNCC define competências e habilidades essenciais, servindo como referência nacional para o currículo escolar."
+  },
+  {
+    id: 35,
+    question: "A organização do trabalho pedagógico compreende:",
+    options: [
+      "Apenas a aplicação de avaliações",
+      "O conjunto de ações intencionais voltadas à aprendizagem",
+      "Somente o plano de aula",
+      "Apenas eventos escolares",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O trabalho pedagógico é planejado e coletivo, articulando currículo, ensino e gestão."
+  },
+  {
+    id: 36,
+    question: "A educação inclusiva busca:",
+    options: [
+      "Separar alunos com deficiência",
+      "Incluir todos com igualdade de oportunidades",
+      "Adaptar a escola apenas fisicamente",
+      "Avaliar de forma uniforme",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A educação inclusiva valoriza diversidade e equidade, garantindo acessibilidade e participação plena."
+  },
+  {
+    id: 37,
+    question: "O Atendimento Educacional Especializado (AEE) tem como objetivo:",
+    options: [
+      "Substituir o ensino regular",
+      "Oferecer suporte pedagógico complementar",
+      "Criar turmas segregadas",
+      "Avaliar o desempenho dos alunos com deficiência",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O AEE é apoio pedagógico complementar, garantindo participação plena do aluno com deficiência na sala regular."
+  },
+  {
+    id: 38,
+    question: "A prática interdisciplinar busca:",
+    options: [
+      "Integrar saberes de diferentes áreas para compreender a realidade",
+      "Substituir disciplinas tradicionais",
+      "Fragmentar o conhecimento",
+      "Evitar a contextualização",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "A interdisciplinaridade propõe conexões entre áreas, favorecendo aprendizagem significativa."
+  },
+  {
+    id: 39,
+    question: "A gestão democrática baseia-se em:",
+    options: [
+      "Hierarquia e centralização",
+      "Participação coletiva e transparência",
+      "Burocracia escolar",
+      "Avaliação externa",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Prevista na Constituição e LDB, a gestão democrática envolve participação, diálogo e corresponsabilidade."
+  },
+  {
+    id: 40,
+    question: "Segundo a psicologia da aprendizagem, a motivação:",
+    options: [
+      "Não interfere na aprendizagem",
+      "É fator essencial para o engajamento cognitivo",
+      "Depende apenas do professor",
+      "É inata e imutável",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A motivação impulsiona o aluno a aprender, sendo influenciada por interesse, relevância e reconhecimento."
+  },
+  {
+    id: 41,
+    question: "A educação do campo valoriza:",
+    options: [
+      "A urbanização",
+      "A cultura e o modo de vida das populações rurais",
+      "A migração para cidades",
+      "O ensino padronizado urbano",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Políticas de educação do campo buscam respeitar saberes locais e fortalecer identidade rural."
+  },
+  {
+    id: 42,
+    question: "O conceito de currículo oculto refere-se:",
+    options: [
+      "Ao conteúdo não previsto nos planos, mas presente nas práticas e valores escolares",
+      "À parte confidencial do PPP",
+      "Às atividades extracurriculares",
+      "Às metas da BNCC",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "O currículo oculto inclui valores, atitudes e normas implícitas que influenciam a formação dos alunos."
+  },
+  {
+    id: 43,
+    question: "O planejamento anual deve:",
+    options: [
+      "Ser estático e imutável",
+      "Ser flexível e revisado conforme as necessidades da turma",
+      "Focar apenas no calendário",
+      "Repetir o do ano anterior",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Planejar é um ato dinâmico e reflexivo, ajustado ao contexto pedagógico."
+  },
+  {
+    id: 44,
+    question: "O professor pesquisador é aquele que:",
+    options: [
+      "Reproduz metodologias prontas",
+      "Observa, analisa e transforma sua prática com base na reflexão e investigação",
+      "Segue ordens administrativas",
+      "Depende de especialistas externos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Conforme Stenhouse e Schön, o professor pesquisador é reflexivo, autônomo e inovador."
+  },
+  {
+    id: 45,
+    question: "O projeto político-pedagógico (PPP) deve:",
+    options: [
+      "Ser imposto pela direção",
+      "Refletir a identidade e os objetivos coletivos da escola",
+      "Ser apenas burocrático",
+      "Focar em metas individuais",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O PPP orienta a escola, articulando currículo, gestão, avaliação e práticas pedagógicas de forma coletiva."
+  },
+  {
+    id: 46,
+    question: "A formação continuada deve ser entendida como:",
+    options: [
+      "Cumprimento de horas obrigatórias",
+      "Processo permanente de aperfeiçoamento e reflexão sobre a prática",
+      "Atualização burocrática",
+      "Exigência legal apenas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "É uma formação ao longo da vida, voltada à autonomia e ao desenvolvimento profissional docente."
+  },
+  {
+    id: 47,
+    question: "O uso de tecnologias digitais na educação deve:",
+    options: [
+      "Substituir o professor",
+      "Favorecer a autoria, pesquisa e construção do conhecimento",
+      "Restringir-se a jogos",
+      "Ser proibido na alfabetização",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "As tecnologias devem ser mediadoras do aprendizado, ampliando possibilidades pedagógicas."
+  },
+  {
+    id: 48,
+    question: "A avaliação na alfabetização deve:",
+    options: [
+      "Classificar os alunos",
+      "Ser contínua e considerar hipóteses de escrita",
+      "Ser feita apenas por provas",
+      "Reprovar quem erra ortografia",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Deve ser diagnóstica e processual, identificando avanços e dificuldades nas hipóteses de escrita."
+  },
+  {
+    id: 49,
+    question: "O compromisso ético do professor está relacionado a:",
+    options: [
+      "Cumprir horários",
+      "Promover o desenvolvimento humano, social e cultural dos educandos",
+      "Neutralidade absoluta",
+      "Seguir manuais didáticos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A ética docente envolve respeito, justiça e compromisso com a emancipação humana."
+  },
+  {
+    id: 50,
+    question: "Segundo Durkheim, a educação é:",
+    options: [
+      "Um fenômeno natural",
+      "Um fato social que visa à integração do indivíduo à sociedade",
+      "Uma escolha individual",
+      "Um processo espontâneo",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A educação é processo social e moral, essencial para a coesão e continuidade da sociedade."
+  },
+
+  // --- BLOCO 3: Questões 51–75 (Didática, Desenvolvimento e Práticas Pedagógicas)
+  {
+    id: 51,
+    question: "Durante uma aula, a professora percebe que seus alunos estão desmotivados. Ela decide reorganizar a atividade, introduzindo jogos, desafios e trabalho em grupo. Essa atitude demonstra:",
+    options: [
+      "Centralização no conteúdo programático",
+      "Planejamento rígido e tradicional",
+      "Adaptação metodológica baseada na aprendizagem ativa",
+      "Avaliação somativa",
+      "Ensino diretivo"
+    ],
+    answer: "c",
+    explanation: "A professora adapta sua metodologia conforme as necessidades da turma — isso revela flexibilidade didática e foco na aprendizagem ativa."
+  },
+  {
+    id: 52,
+    question: "Segundo Lev Vygotsky, o aprendizado ocorre:",
+    options: [
+      "Por meio da observação e repetição de comportamentos",
+      "Em isolamento, respeitando o ritmo individual",
+      "A partir da interação social e da mediação do outro",
+      "Pela maturação biológica natural",
+      "Apenas na fase operatória concreta"
+    ],
+    answer: "c",
+    explanation: "Vygotsky defendia que o conhecimento se constrói na relação social, com destaque para o papel do mediador e da ZDP."
+  },
+  {
+    id: 53,
+    question: "Uma prática pedagógica que valoriza o diálogo, a escuta e a construção conjunta do conhecimento está de acordo com os princípios de:",
+    options: [
+      "Jean Piaget",
+      "Emile Durkheim",
+      "Paulo Freire",
+      "Skinner",
+      "Thorndike"
+    ],
+    answer: "c",
+    explanation: "Para Paulo Freire, ensinar é um ato de amor e diálogo; a educação deve ser libertadora, crítica e problematizadora."
+  },
+  {
+    id: 54,
+    question: "Na avaliação formativa, o foco principal é:",
+    options: [
+      "A classificação final dos estudantes",
+      "O controle disciplinar",
+      "O acompanhamento contínuo da aprendizagem",
+      "A mensuração numérica de desempenho",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A avaliação formativa é processual e diagnóstica — serve para ajustar a prática pedagógica e promover avanços na aprendizagem."
+  },
+  {
+    id: 55,
+    question: "O conceito de currículo oculto refere-se:",
+    options: [
+      "Ao currículo não registrado oficialmente, mas presente nas relações escolares",
+      "À parte do currículo que não é ensinada",
+      "Aos conteúdos extracurriculares de reforço",
+      "Aos planos de ensino arquivados",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "O currículo oculto envolve os valores, atitudes e normas sociais transmitidos implicitamente na escola."
+  },
+  {
+    id: 56,
+    question: "A ação pedagógica que incentiva o aluno a refletir, investigar e buscar soluções próprias está alinhada ao princípio da:",
+    options: [
+      "Transmissão de conteúdo",
+      "Autonomia intelectual",
+      "Autoridade docente",
+      "Competição escolar",
+      "Memorização mecânica"
+    ],
+    answer: "b",
+    explanation: "Desenvolver a autonomia permite que o aluno se torne sujeito ativo do seu aprendizado."
+  },
+  {
+    id: 57,
+    question: "Na educação infantil, o brincar é:",
+    options: [
+      "Apenas um momento de lazer",
+      "Um instrumento secundário no processo educativo",
+      "Um eixo estruturante da aprendizagem",
+      "Inadequado para desenvolver habilidades cognitivas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "O brincar é eixo central da educação infantil, promovendo desenvolvimento cognitivo, emocional e social."
+  },
+  {
+    id: 58,
+    question: "O professor que ajusta sua prática com base nas avaliações e no feedback dos alunos demonstra:",
+    options: [
+      "Rigidez didática",
+      "Prática centrada no ensino",
+      "Postura reflexiva e investigativa",
+      "Falta de planejamento",
+      "Improvisação pedagógica"
+    ],
+    answer: "c",
+    explanation: "A docência reflexiva implica analisar as próprias práticas, replanejar e melhorar continuamente — competência essencial."
+  },
+  {
+    id: 59,
+    question: "A interdisciplinaridade busca:",
+    options: [
+      "Substituir as disciplinas tradicionais",
+      "Fundir os conteúdos em uma única área",
+      "Promover integração entre saberes e contextos",
+      "Reduzir o currículo",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A interdisciplinaridade articula conhecimentos de diferentes áreas para resolver problemas complexos."
+  },
+  {
+    id: 60,
+    question: "Segundo as Diretrizes Curriculares Nacionais, o planejamento pedagógico deve ser:",
+    options: [
+      "Individual e fechado",
+      "Rígido e imutável",
+      "Coletivo, participativo e flexível",
+      "Padronizado para toda a escola",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "As DCNs reforçam o planejamento colaborativo e flexível, que respeita o contexto e as especificidades da comunidade escolar."
+  },
+  {
+    id: 61,
+    question: "A teoria de Jean Piaget considera que o desenvolvimento cognitivo ocorre por meio de:",
+    options: [
+      "Estágios de maturação e interação com o meio",
+      "Reforços externos",
+      "Instrução direta do professor",
+      "Imitação e condicionamento",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "Piaget propôs estágios de desenvolvimento nos quais o conhecimento se constrói ativamente pela ação."
+  },
+  {
+    id: 62,
+    question: "A educação inclusiva defende:",
+    options: [
+      "Escolas especiais para todos",
+      "Separação de alunos com deficiência",
+      "Atendimento educacional especializado em ambientes segregados",
+      "Acesso, permanência e aprendizagem para todos em classes comuns",
+      "Nenhuma das anteriores"
+    ],
+    answer: "d",
+    explanation: "A inclusão escolar implica garantir equidade e acessibilidade no ensino regular."
+  },
+  {
+    id: 63,
+    question: "Um planejamento de aula eficaz deve considerar:",
+    options: [
+      "Somente os conteúdos curriculares",
+      "Apenas o tempo e o espaço físico",
+      "Objetivos, conteúdos, metodologia e avaliação",
+      "As opiniões dos professores apenas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Um bom planejamento inclui objetivos claros, estratégias metodológicas e critérios avaliativos coerentes."
+  },
+  {
+    id: 64,
+    question: "As práticas pedagógicas devem respeitar as fases do desenvolvimento humano, conforme:",
+    options: [
+      "A idade cronológica apenas",
+      "Os parâmetros cognitivos fixos",
+      "O contexto sociocultural e o ritmo individual",
+      "As médias institucionais",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A aprendizagem é contextual e deve considerar o desenvolvimento biológico e o contexto sociocultural do aluno."
+  },
+  {
+    id: 65,
+    question: "Em uma turma de alfabetização, a professora propõe atividades que exploram sons, letras e sentidos. Essa prática se relaciona com:",
+    options: [
+      "Ensino tradicional",
+      "Método fônico isolado",
+      "Concepção de alfabetização e letramento",
+      "Ensino conteudista",
+      "Aprendizagem mecânica"
+    ],
+    answer: "c",
+    explanation: "A alfabetização com letramento integra o sistema de escrita com o uso social da leitura e da escrita."
+  },
+  {
+    id: 66,
+    question: "A BNCC enfatiza que a escola deve desenvolver competências gerais que envolvem:",
+    options: [
+      "Apenas o domínio de conteúdos cognitivos",
+      "A formação integral: cognitiva, social, ética e emocional",
+      "O ensino técnico",
+      "A memorização e reprodução",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "As 10 competências gerais da BNCC orientam a formação integral do sujeito — pensamento crítico, empatia, autonomia e cidadania."
+  },
+  {
+    id: 67,
+    question: "A mediação pedagógica consiste em:",
+    options: [
+      "Substituir o aluno na construção do conhecimento",
+      "Fornecer respostas prontas",
+      "Estimular o aluno a construir seu próprio saber com apoio do professor",
+      "Ensinar por repetição",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Medir é facilitar a aprendizagem, criando situações desafiadoras e auxiliando o estudante a elaborar respostas próprias."
+  },
+  {
+    id: 68,
+    question: "O conceito de andragogia refere-se:",
+    options: [
+      "À aprendizagem de crianças pequenas",
+      "Ao ensino lúdico infantil",
+      "À educação de adultos",
+      "À gestão escolar",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A andragogia trata da educação de adultos, baseada na autonomia, na experiência prévia e na aprendizagem significativa."
+  },
+  {
+    id: 69,
+    question: "O projeto político-pedagógico (PPP) deve ser:",
+    options: [
+      "Um documento técnico-administrativo",
+      "Elaborado apenas pela direção",
+      "Coletivo, participativo e revisado periodicamente",
+      "Imutável após sua aprovação",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "O PPP deve ser construído de forma coletiva e democrática, com revisão contínua."
+  },
+  {
+    id: 70,
+    question: "A prática docente baseada em competências busca:",
+    options: [
+      "Transmitir conteúdos memorizáveis",
+      "Desenvolver capacidades cognitivas, atitudinais e procedimentais",
+      "Avaliar apenas notas",
+      "Padronizar métodos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O ensino por competências foca na mobilização de saberes para resolver situações reais e complexas."
+  },
+  {
+    id: 71,
+    question: "A relação entre teoria e prática na formação docente deve ser:",
+    options: [
+      "Distinta e separada",
+      "Subordinada à teoria",
+      "Integrada e dialética",
+      "Exclusivamente empírica",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Prática e teoria são dimensões indissociáveis, fundamentais para reflexão e aprimoramento profissional."
+  },
+  {
+    id: 72,
+    question: "As metodologias ativas têm como principal característica:",
+    options: [
+      "Centralizar o professor",
+      "Passividade do aluno",
+      "Foco na aprendizagem experiencial e colaborativa",
+      "Ensino expositivo",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "Metodologias ativas (sala invertida, PBL) colocam o aluno como protagonista, com o professor como mediador."
+  },
+  {
+    id: 73,
+    question: "A educação do campo valoriza:",
+    options: [
+      "O currículo urbano",
+      "A homogeneização cultural",
+      "O saber e as práticas das comunidades rurais",
+      "O afastamento da realidade local",
+      "Nenhuma das anteriores"
+    ],
+    answer: "c",
+    explanation: "A educação do/no campo reconhece saberes das populações rurais e seus modos de vida como patrimônio pedagógico."
+  },
+  {
+    id: 74,
+    question: "No processo de alfabetização, a consciência fonológica é:",
+    options: [
+      "A habilidade de associar sons e letras",
+      "Uma técnica de caligrafia",
+      "Uma prática de memorização visual",
+      "Um treino de leitura mecânica",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "A consciência fonológica é a capacidade de perceber e manipular sons da fala, essencial para aprender a ler e escrever."
+  },
+  {
+    id: 75,
+    question: "O papel do professor na educação inclusiva é:",
+    options: [
+      "Aplicar atividades diferenciadas apenas aos alunos com deficiência",
+      "Promover práticas que garantam a participação e aprendizagem de todos",
+      "Separar grupos conforme desempenho",
+      "Direcionar o ensino apenas para o currículo padrão",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O docente inclusivo é mediador da equidade, adaptando estratégias para garantir o direito de aprender a todos."
+  },
+
+  // --- BLOCO 4: Questões 76–100 (Legislação, Políticas e Gestão)
+  {
+    id: 76,
+    question: "A LDB (Lei nº 9.394/1996) estabelece que:",
+    options: [
+      "O currículo escolar é padronizado e imutável",
+      "O ensino deve respeitar a diversidade e as etapas da educação básica",
+      "A escola deve ser rígida e centralizada",
+      "A avaliação escolar é facultativa",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A LDB prevê que a educação deve respeitar a diversidade, os níveis e modalidades da educação, promovendo autonomia e inclusão."
+  },
+  {
+    id: 77,
+    question: "O Plano Nacional de Educação (PNE 2014–2024) tem como objetivo:",
+    options: [
+      "Estabelecer metas e estratégias para toda a educação brasileira",
+      "Substituir os currículos estaduais",
+      "Definir regras de avaliação individual apenas",
+      "Uniformizar os métodos de ensino",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "O PNE define metas estratégicas para orientar políticas públicas e investimentos, buscando equidade e qualidade."
+  },
+  {
+    id: 78,
+    question: "A gestão democrática nas escolas envolve:",
+    options: [
+      "Exclusivamente a direção escolar",
+      "Participação da comunidade, professores, estudantes e gestores",
+      "Decisões centralizadas pelo governo",
+      "Planejamento individualizado do professor",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Gestão democrática implica transparência, diálogo e corresponsabilidade."
+  },
+  {
+    id: 79,
+    question: "O PPP deve ser:",
+    options: [
+      "Documento técnico isolado da prática pedagógica",
+      "Uma construção coletiva, refletindo objetivos, valores e identidade da escola",
+      "Redigido apenas pela secretaria de educação",
+      "Imutável e padronizado nacionalmente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O PPP é o guia orientador da escola, articulando currículo, gestão e práticas pedagógicas de forma coletiva."
+  },
+  {
+    id: 80,
+    question: "As Diretrizes Curriculares Nacionais para a Formação de Professores orientam que:",
+    options: [
+      "A formação docente deve ser apenas teórica",
+      "Professores devem ser formados com base em conteúdos, metodologias e prática supervisionada",
+      "Avaliação docente é opcional",
+      "O estágio não é necessário",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "As DCNs exigem formação integral, combinando conteúdo, prática pedagógica, pesquisa e reflexão crítica."
+  },
+  {
+    id: 81,
+    question: "A BNCC é referência para:",
+    options: [
+      "Definir conteúdos obrigatórios em todas as escolas do país",
+      "Garantir direitos de aprendizagem e desenvolvimento",
+      "Substituir o PPP escolar",
+      "Padronizar avaliações de todas as disciplinas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A BNCC estabelece direitos de aprendizagem, competências e habilidades essenciais, respeitando autonomia de sistemas e escolas."
+  },
+  {
+    id: 82,
+    question: "Segundo a Constituição Federal (1988), a educação é:",
+    options: [
+      "Privativa do setor privado",
+      "Direito de todos e dever do Estado e da família",
+      "Foco exclusivo em ensino técnico",
+      "Obrigatória apenas no ensino médio",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O artigo 205 garante educação como direito universal e dever do Estado, família e sociedade."
+  },
+  {
+    id: 83,
+    question: "O educador como mediador da aprendizagem deve:",
+    options: [
+      "Fornecer respostas prontas",
+      "Criar situações que promovam reflexão, investigação e autonomia",
+      "Repetir conteúdos memorizados",
+      "Avaliar apenas quantitativamente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A mediação pedagógica estimula o aluno a construir conhecimento de forma crítica e autônoma."
+  },
+  {
+    id: 84,
+    question: "As políticas de educação inclusiva no Brasil são regulamentadas por:",
+    options: [
+      "LDB, Decreto 7.611/2011 e Lei Brasileira de Inclusão (2015)",
+      "Apenas normas municipais",
+      "Estatuto da Criança e do Adolescente exclusivamente",
+      "Diretrizes internacionais sem legislação nacional",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "A legislação brasileira garante acesso, permanência e aprendizagem de pessoas com deficiência em escolas regulares."
+  },
+  {
+    id: 85,
+    question: "A avaliação escolar deve:",
+    options: [
+      "Ser somente classificatória",
+      "Considerar diagnóstico, acompanhamento e resultados",
+      "Depender exclusivamente de provas escritas",
+      "Focar apenas na quantidade de conteúdo",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Avaliação deve ser processual, formativa e somativa, permitindo ajustes pedagógicos."
+  },
+  {
+    id: 86,
+    question: "A gestão escolar deve ser orientada por:",
+    options: [
+      "Decisões individuais da direção",
+      "Participação da comunidade, planejamento coletivo e transparência",
+      "Normas rígidas sem diálogo",
+      "Avaliações externas apenas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Gestão democrática requer planejamento participativo e envolvimento da comunidade."
+  },
+  {
+    id: 87,
+    question: "O ensino fundamental obrigatório no Brasil vai dos:",
+    options: [
+      "3 aos 10 anos",
+      "6 aos 14 anos",
+      "7 aos 15 anos",
+      "5 aos 12 anos",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Conforme LDB, o ensino fundamental geralmente vai dos 6 aos 14 anos (9 anos de duração)."
+  },
+  {
+    id: 88,
+    question: "O ensino médio deve ser:",
+    options: [
+      "Apenas preparatório para vestibular",
+      "Integral, voltado para o desenvolvimento de competências gerais e formação cidadã",
+      "Exclusivamente técnico",
+      "Opcional e fragmentado",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O ensino médio atual visa competências e habilidades para cidadania e vida profissional."
+  },
+  {
+    id: 89,
+    question: "O trabalho pedagógico coletivo envolve:",
+    options: [
+      "Apenas professores da mesma disciplina",
+      "Planejamento e avaliação conjunta, alinhados ao PPP e à BNCC",
+      "Reuniões pontuais sem aplicação prática",
+      "Avaliações individuais isoladas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A colaboração entre professores garante coerência curricular e interdisciplinaridade."
+  },
+  {
+    id: 90,
+    question: "O estágio supervisionado é componente:",
+    options: [
+      "Optativo do curso de Pedagogia",
+      "Obrigatório, integrando teoria e prática docente",
+      "Exclusivamente para alunos do ensino médio",
+      "Apenas em instituições privadas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O estágio supervisionado é essencial para a formação docente, promovendo aplicação prática."
+  },
+  {
+    id: 91,
+    question: "O PPP deve contemplar:",
+    options: [
+      "Normas administrativas apenas",
+      "Objetivos, valores, metas pedagógicas e estratégias de avaliação",
+      "Conteúdos de livros didáticos exclusivamente",
+      "Avaliações externas unicamente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O PPP orienta missão, objetivos, estratégias e valores, articulando planejamento e práticas."
+  },
+  {
+    id: 92,
+    question: "A legislação brasileira prevê que a educação infantil deve:",
+    options: [
+      "Priorizar aprendizagem de conteúdos formais",
+      "Assegurar direito ao brincar, desenvolvimento integral e socialização",
+      "Ter currículo uniforme em todas as escolas",
+      "Avaliar crianças apenas quantitativamente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Conforme DCNEI e BNCC, a educação infantil valoriza brincar, socialização e desenvolvimento integral."
+  },
+  {
+    id: 93,
+    question: "O Planejamento Anual Escolar deve ser:",
+    options: [
+      "Fixo e inalterável",
+      "Dinâmico, flexível e construído coletivamente",
+      "Feito apenas pela coordenação pedagógica",
+      "Subordinado a metas de avaliações externas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Planejar é ato reflexivo, adaptando-se às necessidades da turma e contexto social."
+  },
+  {
+    id: 94,
+    question: "O ensino híbrido combina:",
+    options: [
+      "Ensino tradicional e metodologias ativas",
+      "Apenas aulas online",
+      "Apenas videoaulas gravadas",
+      "Ensino expositivo exclusivamente",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "O ensino híbrido integra presencial e digital, promovendo autonomia e personalização da aprendizagem."
+  },
+  {
+    id: 95,
+    question: "A BNCC e as DCNs orientam que o professor deve:",
+    options: [
+      "Ser mero transmissor de conteúdos",
+      "Planejar, mediar, avaliar e promover aprendizagem significativa",
+      "Avaliar apenas com provas escritas",
+      "Centralizar decisões pedagógicas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O professor deve ser mediador do conhecimento, articulando teoria e prática e promovendo autonomia do aluno."
+  },
+  {
+    id: 96,
+    question: "A gestão escolar deve incluir:",
+    options: [
+      "Planejamento participativo, monitoramento e avaliação",
+      "Exclusivamente atividades administrativas",
+      "Somente aplicação de avaliações externas",
+      "Decisões centralizadas pelo governo",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "Gestão eficaz é coletiva e participativa, envolvendo professores, pais, alunos e comunidade."
+  },
+  {
+    id: 97,
+    question: "O direito à educação é garantido pela Constituição Federal e assegura:",
+    options: [
+      "Escolaridade mínima obrigatória, igualdade de oportunidades e formação integral",
+      "Educação apenas para classes privilegiadas",
+      "Ensino técnico exclusivo",
+      "Avaliação apenas quantitativa",
+      "Nenhuma das anteriores"
+    ],
+    answer: "a",
+    explanation: "A Constituição assegura educação pública, gratuita, de qualidade e inclusiva."
+  },
+  {
+    id: 98,
+    question: "A avaliação diagnóstica é utilizada para:",
+    options: [
+      "Classificar e reprovar alunos",
+      "Identificar necessidades e orientar planejamento",
+      "Substituir avaliações finais",
+      "Aplicar provas padronizadas",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "Avaliação diagnóstica é prévia e formativa, permitindo ajustar estratégias pedagógicas."
+  },
+  {
+    id: 99,
+    question: "A EJA deve:",
+    options: [
+      "Seguir currículo infantil",
+      "Considerar experiências prévias e promover aprendizagem significativa",
+      "Avaliar apenas memorização",
+      "Excluir habilidades socioemocionais",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "A EJA valoriza experiências e saberes prévios, articulando ensino formal e desenvolvimento de competências."
+  },
+  {
+    id: 100,
+    question: "O papel do pedagogo em espaços não escolares inclui:",
+    options: [
+      "Somente supervisão de professores",
+      "Planejamento e execução de programas educativos, orientação e avaliação de políticas públicas",
+      "Atuação exclusiva em escolas privadas",
+      "Ensino técnico formal",
+      "Nenhuma das anteriores"
+    ],
+    answer: "b",
+    explanation: "O pedagogo atua em diferentes contextos, promovendo educação continuada, formação de cidadãos e implementação de políticas públicas."
+  }
+];
+
+// estado
+let currentIndex = 0;
+let score = 0;
+const answered = {}; // chave: index, valor: 'a'..'e'
+
+// Elementos
+const qIndexEl = document.getElementById('qIndex');
+const scoreEl = document.getElementById('score');
+const qTextEl = document.getElementById('questionText');
+const optionsListEl = document.getElementById('optionsList');
+const explanationBox = document.getElementById('explanationBox');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const btnRestart = document.getElementById('btnRestart');
+const qNumsEl = document.getElementById('qNums');
+const btnPrint = document.getElementById('btnPrint');
+const btnFinish = document.getElementById('btnFinish');
+
+function renderQuestion() {
+  const q = questions[currentIndex];
+  qIndexEl.textContent = q.id;
+  qTextEl.textContent = q.question;
+  optionsListEl.innerHTML = '';
+  explanationBox.style.display = 'none';
+  explanationBox.textContent = '';
+
+  // build options
+  const letters = ['a','b','c','d','e'];
+  q.options.forEach((opt, i) => {
+    const letter = letters[i];
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.innerHTML = '<strong style="margin-right:10px;">' + letter.toUpperCase() + '.</strong> ' + opt;
+    btn.onclick = () => selectOption(letter);
+    btn.dataset.letter = letter;
+    optionsListEl.appendChild(btn);
+  });
+
+  // mark answered if exists
+  if (answered[currentIndex]) {
+    showAnswerFor(currentIndex);
+  }
+
+  updateNavButtons();
+  highlightQNums();
+}
+
+function selectOption(letter) {
+  if (answered[currentIndex]) return; // já respondida
+  answered[currentIndex] = letter;
+  const q = questions[currentIndex];
+  if (letter === q.answer) score++;
+  scoreEl.textContent = score;
+  showAnswerFor(currentIndex);
+}
+
+function showAnswerFor(index) {
+  const q = questions[index];
+  const opts = Array.from(optionsListEl.querySelectorAll('button.opt'));
+  opts.forEach(btn => {
+    const l = btn.dataset.letter;
+    if (l === q.answer) {
+      btn.classList.add('correct');
+    }
+    if (answered[index] && answered[index] === l && l !== q.answer) {
+      btn.classList.add('wrong');
+    }
+    btn.classList.add('selected');
+    btn.disabled = true;
+  });
+  explanationBox.style.display = 'block';
+  explanationBox.innerHTML = '<strong>Resposta correta:</strong> ' + q.answer.toUpperCase() + '<br><br>' + q.explanation;
+}
+
+function nextQuestion() {
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    renderQuestion();
+  } else {
+    alert('Fim do simulado. Pontuação: ' + score + ' / ' + questions.length);
+  }
+}
+
+function prevQuestion() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    renderQuestion();
+  }
+}
+
+function restart() {
+  if (!confirm('Reiniciar o simulado? Sua pontuação atual será zerada.')) return;
+  currentIndex = 0;
+  score = 0;
+  for (let k in answered) delete answered[k];
+  scoreEl.textContent = score;
+  renderQuestion();
+}
+
+function highlightQNums() {
+  qNumsEl.querySelectorAll('.qnum').forEach(el => el.classList.remove('current'));
+  const curBtn = qNumsEl.querySelector('[data-idx="' + currentIndex + '"]');
+  if (curBtn) curBtn.classList.add('current');
+}
+
+function buildQNums() {
+  qNumsEl.innerHTML = '';
+  for (let i = 0; i < questions.length; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'qnum';
+    btn.textContent = questions[i].id;
+    btn.dataset.idx = i;
+    btn.onclick = () => { currentIndex = i; renderQuestion(); window.scrollTo({top:0,behavior:'smooth'}); };
+    qNumsEl.appendChild(btn);
+  }
+}
+
+// eventos
+btnNext.addEventListener('click', nextQuestion);
+btnPrev.addEventListener('click', prevQuestion);
+btnRestart.addEventListener('click', restart);
+btnPrint.addEventListener('click', () => window.print());
+btnFinish.addEventListener('click', () => alert('Pontuação final: ' + score + ' / ' + questions.length));
+
+// inicial
+buildQNums();
+renderQuestion();
+
+</script>
+</body>
+</html>
